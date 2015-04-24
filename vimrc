@@ -20,7 +20,6 @@ set softtabstop=4
 set expandtab
 set smarttab
 
-"set pastetoggle=<F2>
 set clipboard=unnamedplus                                  " X clipboard as default one
 set history=1000
 
@@ -28,7 +27,7 @@ set splitright
 set splitbelow
 
 let g:latex_to_unicode_auto=1
-set formatoptions+=j                                       " suck it bitch
+set formatoptions+=j                                       " J now joins comment lines properly
 
 let g:C_CplusCompiler='clang++'
 let g:C_UseTool_doxygen='yes'
@@ -42,5 +41,3 @@ set laststatus=2
 set wildmenu
 set hlsearch
 nnoremap <silent> <ESC> :noh<RETURN>
-"noremap <BS> :bprev<CR>
-"noremap <C-l> :bnext<CR>
