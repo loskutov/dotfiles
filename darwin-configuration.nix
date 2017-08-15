@@ -6,7 +6,7 @@ let
     # jupyter_core
     # jupyter_client
     # pandas
-    scikitlearn
+    # scikitlearn
     notebook
     # matplotlib
   ]);
@@ -67,6 +67,10 @@ let
     wrapfig
     xstring;
   };
+  audioStuff = with pkgs; [
+    flac
+    vorbis-tools
+  ];
 in {
   # nix.useSandbox = "relaxed";
   # nixpkgs.config.allowBroken = true;
@@ -75,25 +79,29 @@ in {
   environment.systemPackages = with pkgs; [
     androidenv.platformTools
     clang_4
+    cmake
     dos2unix
     emacs
+    # haskellPackages.idris
+    haskellWithPackages
     gitAndTools.gitFull
     gnupg1compat
     htop
+    irssi
     mosh
     mutt
     nix-repl
     rustup
-    # sbt
-    # scala
+    rustfmt
+    sbt
+    scala
     tree
-    python35WithPackages
-    source-code-pro
-    # haskellPackages.idris
-    haskellWithPackages
+    # python35WithPackages
+    # source-code-pro
     texliveCombined
+    wget
     zsh
-  ];
+  ] ++ audioStuff;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   # programs.bash.enable = true;
