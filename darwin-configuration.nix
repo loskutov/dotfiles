@@ -25,6 +25,48 @@ let
     rustfmt
     rustracer
   ];
+  texliveCombined = pkgs.texlive.combine { inherit (pkgs.texlive)
+    scheme-small
+    algorithmicx
+    algorithms
+    babel-russian
+    beamer
+    biblatex
+    biblatex-gost
+    bussproofs
+    chngcntr
+    cm-super
+    csquotes
+    cyrillic
+    easy
+    elocalloc
+    enumitem
+    environ
+    expdlist
+    floatrow
+    forest
+    lastpage
+    lhcyr
+    lkproof
+    logreq
+    marvosym
+    moderncv
+    multirow
+    paratype
+    pgfopts
+    placeins
+    srcltx
+    subfigure
+    t2
+    tabu
+    titlesec
+    totcount
+    trimspaces
+    varwidth
+    was
+    wrapfig
+    xstring;
+  };
 in {
   # nix.useSandbox = "relaxed";
   # nixpkgs.config.allowBroken = true;
@@ -49,7 +91,7 @@ in {
     source-code-pro
     # haskellPackages.idris
     haskellWithPackages
-    (texlive.combine { inherit (texlive) beamer scheme-minimal lh lhcyr t2 cyrillic; })
+    texliveCombined
     zsh
   ];
 
